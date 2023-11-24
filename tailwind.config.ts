@@ -13,10 +13,10 @@ const config: Config = {
 
     extend: {
       lineHeight: {
-        'leading-shorter': '125%',
-        'leading-short': '140%',
-        'leading-base': '160%',
-        'leading-tall': '180%',
+        shorter: '125%',
+        short: '140%',
+        base: '160%',
+        tall: '180%',
       },
 
       colors: {
@@ -47,6 +47,14 @@ const config: Config = {
 
         'gradient-vertical': `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
         'gradient-horizontal': `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,
+      },
+
+      maxWidth: {
+        login: '50vw',
+      },
+
+      gridTemplateColumns: {
+        login: 'min-content, 1fr',
       },
     },
   },
