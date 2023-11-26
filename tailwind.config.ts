@@ -44,9 +44,6 @@ const config: Config = {
           700: '#181C2A',
           800: '#0E1116',
         },
-
-        'gradient-vertical': `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
-        'gradient-horizontal': `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,
       },
 
       maxWidth: {
@@ -55,6 +52,17 @@ const config: Config = {
 
       gridTemplateColumns: {
         login: 'min-content, 1fr',
+        aside: '17rem, 1fr',
+      },
+
+      backgroundImage: {
+        aside: 'url("/images/bg-aside.png")',
+        'gradient-vertical': `linear-gradient(180deg, #7FD1CC 0%, #9694F5 100%)`,
+        'gradient-horizontal': `linear-gradient(90deg, #7FD1CC 0%, #9694F5 100%)`,
+      },
+
+      height: {
+        aside: 'calc(100vh - 2rem)',
       },
     },
   },

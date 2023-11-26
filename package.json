@@ -6,14 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "next": "14.0.3",
-    "phosphor-icons": "^1.4.2",
     "react": "^18",
     "react-dom": "^18",
     "uuid": "^9.0.1"
