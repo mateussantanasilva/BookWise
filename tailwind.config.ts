@@ -23,6 +23,10 @@ const config: Config = {
         white: '#FFFFFF',
         black: '#000000',
 
+        red: {
+          500: '#F75A68',
+        },
+
         green: {
           100: '#50B2C0',
           200: '#255D6A',
@@ -53,6 +57,8 @@ const config: Config = {
       gridTemplateColumns: {
         login: 'min-content, 1fr',
         aside: '17rem, 1fr',
+        panel: '1fr, 26.25rem',
+        profile: '1fr, 25.25rem',
       },
 
       backgroundImage: {
