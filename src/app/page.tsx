@@ -2,6 +2,9 @@ import Image from 'next/image'
 import { SignInCard } from '@/components/SignInCard'
 
 import BgLoginImage from 'public/images/bg-login.png'
+import IconGoogleImage from 'public/images/icon-google.svg'
+import IconGithubImage from 'public/images/icon-github.svg'
+import IconVisitorImage from 'public/images/icon-visitor.svg'
 
 export default function Home() {
   return (
@@ -26,11 +29,23 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <SignInCard variant="google" />
+          <SignInCard
+            icon={IconGoogleImage}
+            text="Logo do google"
+            content="Entrar com Google"
+          />
 
-          <SignInCard variant="github" />
+          <SignInCard
+            icon={IconGithubImage}
+            text="Logo do github"
+            content="Entrar com GitHub"
+          />
 
-          <SignInCard />
+          <SignInCard
+            icon={IconVisitorImage}
+            text="Logo de um foguete"
+            content="Acessar como visitante"
+          />
         </div>
       </section>
     </main>

@@ -20,6 +20,8 @@ const config: Config = {
       },
 
       colors: {
+        overlay: 'rgba(0, 0, 0, 0.60)',
+
         white: '#FFFFFF',
         black: '#000000',
 
@@ -69,6 +71,12 @@ const config: Config = {
 
       height: {
         aside: 'calc(100vh - 2rem)',
+      },
+
+      width: {
+        'book-dialog': 'min(41.25rem, 90vw)',
+        'login-dialog': 'min(32.25rem, 92vw)',
+        'buttons-dialog': 'min(23.25rem, 100%)',
       },
     },
   },
