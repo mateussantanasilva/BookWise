@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { Avatar } from './Avatar'
-import { SignIn, SignOut } from '@phosphor-icons/react'
+import { Avatar } from '../Avatar'
+import { SignIn, SignOut } from '@phosphor-icons/react/dist/ssr'
 
 import AvatarExampleImage from 'public/images/avatar-example.png'
 
-export function SessionControlLink() {
+export function SessionLink() {
   return (
     <>
       {/* <Link

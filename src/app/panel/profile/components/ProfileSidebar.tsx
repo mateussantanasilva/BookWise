@@ -1,11 +1,11 @@
 import { Avatar } from '@/components/Avatar'
-import { StatusItem } from './StatusItem'
+import { StatusItem } from '../../../../components/StatusItem'
 import {
   BookOpen,
   BookmarkSimple,
   Books,
   UserList,
-} from '@phosphor-icons/react'
+} from '@phosphor-icons/react/dist/ssr'
 
 import AvatarExampleImage from 'public/images/avatar-example.png'
 

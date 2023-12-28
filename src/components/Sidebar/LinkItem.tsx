@@ -1,14 +1,16 @@
+'use client'
+
 import { ElementType } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-interface SidebarLinkProps {
+interface LinkItemProps {
   href: string
   icon: ElementType
   content: string
 }
 
-export function SidebarLink({ href, icon: Icon, content }: SidebarLinkProps) {
+export function LinkItem({ href, icon: Icon, content }: LinkItemProps) {
   const pathname = usePathname()
 
   return (

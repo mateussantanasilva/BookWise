@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
-import { CaretRight } from '@phosphor-icons/react'
+import { CaretRight } from '@phosphor-icons/react/dist/ssr'
 
 import BookExampleImage from 'public/images/books/o-hobbit.png'
 

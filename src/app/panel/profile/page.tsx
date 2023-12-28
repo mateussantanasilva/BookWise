@@ -1,9 +1,7 @@
-'use client'
-
+import * as Input from '@/components/Input'
 import { PrivateReviewPost } from './components/PrivateReviewPost'
 import { ProfileSidebar } from './components/ProfileSidebar'
-import { SearchFilter } from './components/SearchFilter'
-import { User } from '@phosphor-icons/react'
+import { MagnifyingGlass, User } from '@phosphor-icons/react/dist/ssr'
 
 export default function Profile() {
   return (
@@ -15,11 +13,19 @@ export default function Profile() {
         </h1>
       </header>
 
-      <div className="grid-cols-profile mb-4 grid gap-16">
+      <div className="mb-4 grid grid-cols-profile gap-16">
         <div>
-          <SearchFilter />
+          <form>
+            <Input.Root>
+              <Input.Control placeholder="Buscar livro avaliado" />
 
-          <section className="space-y-6">
+              <Input.Suffix>
+                <MagnifyingGlass size="1.25rem" className="h-5 w-5" />
+              </Input.Suffix>
+            </Input.Root>
+          </form>
+
+          <section className="mt-8 space-y-6">
             <PrivateReviewPost />
             <PrivateReviewPost />
           </section>

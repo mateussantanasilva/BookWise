@@ -1,4 +1,4 @@
-import { Star } from '@phosphor-icons/react'
+import { Star } from '@phosphor-icons/react/dist/ssr'
 
 interface RatingStarsProps {
   rating: number
@@ -21,7 +21,5 @@ export function RatingStars({ rating, size = '1rem' }: RatingStarsProps) {
         )
       })}
     </div>
-
-    // 16, 20, 28
   )
 }
