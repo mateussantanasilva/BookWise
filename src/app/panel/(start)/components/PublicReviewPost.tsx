@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
 import { Avatar } from '@/components/Avatar'
@@ -9,14 +10,14 @@ export function PublicReviewPost() {
   return (
     <article className="rounded-lg bg-gray-700 p-6">
       <header className="mb-8 flex justify-between">
-        <div className="flex gap-4">
+        <Link href="/panel/profile" className="flex gap-4">
           <Avatar src={AvatarExampleImage} alt="Foto de perfil" />
 
           <div>
             <p className="leading-base text-gray-100">Jaxson Dias</p>
             <span className="text-sm leading-base text-gray-400">Hoje</span>
           </div>
-        </div>
+        </Link>
 
         <RatingStars rating={4} />
       </header>
@@ -42,7 +43,7 @@ export function PublicReviewPost() {
             aenean posuere amet ultrices. Cras fermentum id pulvinar varius leo
             a in. Amet libero pharetra nunc elementum fringilla velit ipsum. Sed
             vulputate massa velit nibh...{' '}
-            <span className="font-bold text-purple-100">ver mais</span>
+            <button className="font-bold text-purple-100">ver mais</button>
           </p>
         </div>
       </div>

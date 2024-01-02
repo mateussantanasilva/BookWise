@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
@@ -12,13 +13,19 @@ export function LastReadCard() {
           Sua última leitura
         </h3>
 
-        <div className="mx-2 my-1 flex items-center gap-2 text-purple-100">
+        <Link
+          href="/panel/profile"
+          className="flex items-center gap-2 px-2 py-1 text-purple-100 transition-colors hover:rounded hover:bg-link-purple"
+        >
           <span className="text-sm font-bold leading-base">Ver todas</span>
           <CaretRight size="1rem" />
-        </div>
+        </Link>
       </header>
 
-      <article className="flex gap-6 rounded-lg bg-gray-600 px-6 py-5 transition-shadow hover:ring-2 hover:ring-gray-500">
+      <Link
+        href="/panel/profile"
+        className="flex gap-6 rounded-lg bg-gray-600 px-6 py-5 transition-shadow hover:ring-2 hover:ring-gray-500"
+      >
         <Image
           src={BookExampleImage}
           alt="Capa do livro O Hobbit"
@@ -47,7 +54,7 @@ export function LastReadCard() {
             Penatibus id vestibulum imperdiet a at imperdiet lectu...
           </p>
         </div>
-      </article>
+      </Link>
     </section>
   )
 }

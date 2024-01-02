@@ -21,6 +21,8 @@ const config: Config = {
 
       colors: {
         overlay: 'rgba(0, 0, 0, 0.60)',
+        'link-white': 'rgba(230, 232, 242, 0.04)',
+        'link-purple': 'rgba(131, 129, 217, 0.06)',
 
         white: '#FFFFFF',
         black: '#000000',

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { SignInCard } from '@/components/SignInCard'
+import * as SignInCard from '@/components/SignInCard'
 
 import BgLoginImage from 'public/images/bg-login.png'
 import IconGoogleImage from 'public/images/icon-google.svg'
@@ -29,23 +29,29 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col gap-4">
-          <SignInCard
-            icon={IconGoogleImage}
-            text="Logo do google"
-            content="Entrar com Google"
-          />
+          <SignInCard.Root>
+            <SignInCard.Content
+              icon={IconGoogleImage}
+              text="Logo do google"
+              content="Entrar com Google"
+            />
+          </SignInCard.Root>
 
-          <SignInCard
-            icon={IconGithubImage}
-            text="Logo do github"
-            content="Entrar com GitHub"
-          />
+          <SignInCard.Root>
+            <SignInCard.Content
+              icon={IconGithubImage}
+              text="Logo do github"
+              content="Entrar com GitHub"
+            />
+          </SignInCard.Root>
 
-          <SignInCard
-            icon={IconVisitorImage}
-            text="Logo de um foguete"
-            content="Acessar como visitante"
-          />
+          <SignInCard.Root href="/panel">
+            <SignInCard.Content
+              icon={IconVisitorImage}
+              text="Logo de um foguete"
+              content="Acessar como visitante"
+            />
+          </SignInCard.Root>
         </div>
       </section>
     </main>

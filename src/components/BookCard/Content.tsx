@@ -1,21 +1,16 @@
 import { ComponentProps } from 'react'
 import Image from 'next/image'
-import { RatingStars } from './RatingStars'
+import { RatingStars } from '../RatingStars'
 
-type SimpleBookCardProps = ComponentProps<typeof Image> & {
+type ContentProps = ComponentProps<typeof Image> & {
   title: string
   author: string
   size: 108 | 64
 }
 
-export function SimpleBookCard({
-  title,
-  author,
-  size,
-  ...props
-}: SimpleBookCardProps) {
+export function Content({ title, author, size, ...props }: ContentProps) {
   return (
-    <article className="flex gap-5 rounded-lg bg-gray-700 px-5 py-4 transition-shadow hover:ring-2 hover:ring-gray-600">
+    <>
       <Image {...props} src={props.src} alt={props.alt} width={size} />
 
       <div className="flex flex-col justify-between text-start">
@@ -28,6 +23,6 @@ export function SimpleBookCard({
 
         <RatingStars rating={4} />
       </div>
-    </article>
+    </>
   )
 }
