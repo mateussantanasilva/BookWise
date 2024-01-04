@@ -76,6 +76,7 @@ const config: Config = {
       },
 
       width: {
+        sidebar: 'min(14.5rem, 80vw)',
         'book-dialog': 'min(41.25rem, 90vw)',
         'login-dialog': 'min(32.25rem, 92vw)',
         'buttons-dialog': 'min(23.25rem, 100%)',

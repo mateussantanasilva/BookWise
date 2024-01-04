@@ -6,7 +6,7 @@ import LogoImage from 'public/images/logo.png'
 
 export function Sidebar() {
   return (
-    <aside className="fixed mx-5 my-4 flex h-aside flex-col items-center rounded-xl bg-aside bg-cover bg-no-repeat px-[3.25rem] pb-6 pt-10">
+    <aside className="fixed mx-5 my-4 flex h-aside w-sidebar flex-col items-center rounded-xl bg-aside bg-cover bg-no-repeat px-5 pb-6 pt-10">
       <Image
         src={LogoImage}
         alt="Logo do BookWise com um livro ao lado"

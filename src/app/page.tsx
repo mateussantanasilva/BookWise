@@ -1,10 +1,7 @@
+import { Options as SignInOptions } from '@/components/SignIn/Options'
 import Image from 'next/image'
-import * as SignInCard from '@/components/SignInCard'
 
 import BgLoginImage from 'public/images/bg-login.png'
-import IconGoogleImage from 'public/images/icon-google.svg'
-import IconGithubImage from 'public/images/icon-github.svg'
-import IconVisitorImage from 'public/images/icon-visitor.svg'
 
 export default function Home() {
   return (
@@ -28,31 +25,7 @@ export default function Home() {
           Faça seu login ou acesse como visitante.
         </p>
 
-        <div className="flex flex-col gap-4">
-          <SignInCard.Root>
-            <SignInCard.Content
-              icon={IconGoogleImage}
-              text="Logo do google"
-              content="Entrar com Google"
-            />
-          </SignInCard.Root>
-
-          <SignInCard.Root>
-            <SignInCard.Content
-              icon={IconGithubImage}
-              text="Logo do github"
-              content="Entrar com GitHub"
-            />
-          </SignInCard.Root>
-
-          <SignInCard.Root href="/panel">
-            <SignInCard.Content
-              icon={IconVisitorImage}
-              text="Logo de um foguete"
-              content="Acessar como visitante"
-            />
-          </SignInCard.Root>
-        </div>
+        <SignInOptions />
       </section>
     </main>
   )

@@ -18,17 +18,18 @@ export function ReviewForm() {
         <RatingStars rating={0} size="1.75rem" />
       </div>
 
-      <Input.Root>
-        <Input.Control
+      <div className="space-y-2 rounded-md border border-gray-500 bg-gray-800 px-5 py-3.5 text-gray-500 transition-colors focus-within:border-green-200 focus-within:text-green-200">
+        <textarea
           placeholder="Escreva sua avaliação"
           maxLength={450}
-        ></Input.Control>
+          className="min-h-[6rem] w-full resize-y bg-transparent text-sm/base text-gray-200 placeholder-gray-400 outline-none"
+        ></textarea>
 
-        <div>
+        <div className="ml-auto w-max">
           <span>0</span>
           <span>/450</span>
         </div>
-      </Input.Root>
+      </div>
 
       <div className="mt-3 flex justify-end gap-2">
         <button

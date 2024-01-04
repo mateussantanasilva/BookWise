@@ -1,7 +1,7 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import * as SignInCard from '@/components/SignInCard'
+import * as SignInCard from '@/components/SignIn/Card'
 import { X } from '@phosphor-icons/react'
 
 import IconGoogleImage from 'public/images/icon-google.svg'
