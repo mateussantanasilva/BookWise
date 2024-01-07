@@ -1,11 +1,14 @@
 import { Avatar } from './Avatar'
-import * as Input from './Input'
 import { RatingStars } from './RatingStars'
 import { Check, X } from '@phosphor-icons/react/dist/ssr'
 
 import AvatarExampleImage from 'public/images/avatar-example.png'
 
-export function ReviewForm() {
+interface ReviewFormProps {
+  onFormIsVisible: () => void
+}
+
+export function ReviewForm({ onFormIsVisible }: ReviewFormProps) {
   return (
     <form className="rounded-lg bg-gray-700 p-6">
       <div className="mb-6 flex justify-between">
@@ -35,6 +38,7 @@ export function ReviewForm() {
         <button
           aria-label="Fechar formulário"
           title="Fechar formulário"
+          onClick={onFormIsVisible}
           className="rounded bg-gray-600 p-2 text-purple-100 transition-colors hover:bg-gray-500"
         >
           <X size="1.5rem" />

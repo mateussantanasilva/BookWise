@@ -7,11 +7,20 @@ import { StatusItem } from '../../../../components/StatusItem'
 import { ReviewPost } from './ReviewPost'
 import { LoginDialog } from '@/components/LoginDialog'
 import { X, BookOpen, BookmarkSimple } from '@phosphor-icons/react'
-
-import BookExampleImage from 'public/images/books/o-poder-do-habito.png'
+import { useSession } from 'next-auth/react'
 import { ReviewForm } from '@/components/ReviewForm'
 
+import BookExampleImage from 'public/images/books/o-poder-do-habito.png'
+import { useState } from 'react'
+
 export function BookDetailsDialog() {
+  const [formIsVisible, setFormIsVisible] = useState(false)
+  const session = useSession()
+
+  function handleFormIsVisible() {
+    setFormIsVisible(!formIsVisible)
+  }
+
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="absolute left-0 top-0 z-10 h-screen w-screen bg-overlay" />
@@ -75,11 +84,23 @@ export function BookDetailsDialog() {
               Avaliações
             </h3>
 
-            <LoginDialog />
+            {session.status === 'authenticated' && (
+              <button
+                onClick={() => setFormIsVisible(true)}
+                disabled={formIsVisible}
+                className="visible px-2 py-1 font-bold leading-base text-purple-100 transition-colors hover:rounded hover:bg-link-purple disabled:invisible"
+              >
+                Avaliar
+              </button>
+            )}
+
+            {session.status === 'unauthenticated' && <LoginDialog />}
           </header>
 
           <div className="space-y-3">
-            {/* <ReviewForm /> */}
+            {formIsVisible && (
+              <ReviewForm onFormIsVisible={handleFormIsVisible} />
+            )}
 
             <ReviewPost isAuthor />
             <ReviewPost />

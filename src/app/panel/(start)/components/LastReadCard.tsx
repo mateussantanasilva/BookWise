@@ -1,11 +1,18 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
+import { useSession } from 'next-auth/react'
 
 import BookExampleImage from 'public/images/books/o-hobbit.png'
 
 export function LastReadCard() {
+  const session = useSession()
+
+  if (session.status === 'unauthenticated') return
+
   return (
     <section className="mb-10">
       <header className="mb-4 flex items-center justify-between">

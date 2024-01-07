@@ -15,12 +15,12 @@ export function SessionLink() {
         className="group flex items-center gap-3 text-sm leading-base text-gray-200 transition-colors hover:text-gray-100"
       >
         <Avatar
-          src={session.data.user?.image}
-          alt={session.data.user?.name}
+          src={session.data.user.avatar_url}
+          alt={session.data.user.name}
           size={32}
         />
 
-        <span className="truncate">{session.data.user?.name}</span>
+        <span className="truncate">{session.data.user.name}</span>
 
         <SignOut
           size="1.25rem"

@@ -3,11 +3,16 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import * as SignInCard from '@/components/SignIn/Card'
 import { X } from '@phosphor-icons/react'
+import { signIn } from 'next-auth/react'
 
 import IconGoogleImage from 'public/images/icon-google.svg'
 import IconGithubImage from 'public/images/icon-github.svg'
 
 export function LoginDialog() {
+  async function handleSignInGithub() {
+    await signIn('github', { callbackUrl: '/panel/explorer' })
+  }
+
   return (
     <Dialog.Root>
       <Dialog.Trigger className="px-2 py-1 font-bold leading-base text-purple-100 transition-colors hover:rounded hover:bg-link-purple">
@@ -39,7 +44,7 @@ export function LoginDialog() {
               />
             </SignInCard.Root>
 
-            <SignInCard.Root>
+            <SignInCard.Root onClick={handleSignInGithub}>
               <SignInCard.Content
                 icon={IconGithubImage}
                 text="Logo do github"

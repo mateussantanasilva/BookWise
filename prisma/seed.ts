@@ -1,10 +1,11 @@
-import { prisma } from '@/libs/prisma'
+import { PrismaClient } from '@prisma/client'
 import { users } from './constants/users'
 import { categories } from './constants/categories'
 import { books } from './constants/books'
 import { ratings } from './constants/ratings'
 
-// run use: npx prisma db sedd
+// run use: npx prisma db seed
+const prisma = new PrismaClient()
 
 async function main() {
   await prisma.rating.deleteMany()
@@ -18,6 +19,7 @@ async function main() {
       data: {
         id: user.id,
         name: user.name,
+        email: user.email,
         avatar_url: user.avatar_url,
       },
     })

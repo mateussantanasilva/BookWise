@@ -1,3 +1,5 @@
+'use client'
+
 import { Avatar } from '@/components/Avatar'
 import { StatusItem } from '../../../../components/StatusItem'
 import {
@@ -6,17 +8,22 @@ import {
   Books,
   UserList,
 } from '@phosphor-icons/react/dist/ssr'
-
-import AvatarExampleImage from 'public/images/avatar-example.png'
+import { useSession } from 'next-auth/react'
 
 export function ProfileSidebar() {
+  const { data } = useSession()
+
   return (
     <aside className="mr-24 flex h-fit flex-col items-center border-l border-gray-700">
       <header className="mb-2 flex flex-col items-center">
-        <Avatar src={AvatarExampleImage} alt="Foto de perfil" size={72} />
+        <Avatar
+          src={data?.user.avatar_url ?? ''}
+          alt="Foto de perfil"
+          size={72}
+        />
 
         <strong className="mt-5 text-xl leading-short text-gray-100">
-          Cristofer Rosser
+          {data?.user.name}
         </strong>
         <span className="text-sm leading-base text-gray-400">
           membro desde 2019
