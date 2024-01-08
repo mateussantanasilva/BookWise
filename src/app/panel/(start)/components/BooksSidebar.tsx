@@ -2,7 +2,7 @@ import Link from 'next/link'
 import * as BookCard from '@/components/BookCard'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
 
-import BookExampleImage from 'public/images/books/o-hobbit.png'
+import BookExampleImage from 'public/images/books/o-hobbit.jpg'
 
 export function BooksSidebar() {
   return (
@@ -28,7 +28,7 @@ export function BooksSidebar() {
             alt="Capa do livro A revolução dos bichos"
             title="O poder do hábito"
             author="George Orwell"
-            size={64}
+            width={64}
           />
         </BookCard.Root>
       </div>

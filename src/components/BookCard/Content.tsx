@@ -5,13 +5,12 @@ import { RatingStars } from '../RatingStars'
 type ContentProps = ComponentProps<typeof Image> & {
   title: string
   author: string
-  size: 108 | 64
 }
 
-export function Content({ title, author, size, ...props }: ContentProps) {
+export function Content({ title, author, ...props }: ContentProps) {
   return (
     <>
-      <Image {...props} src={props.src} alt={props.alt} width={size} />
+      <Image {...props} src={props.src} alt={props.alt} />
 
       <div className="flex flex-col justify-between text-start">
         <div>

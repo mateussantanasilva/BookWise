@@ -9,10 +9,12 @@ const prisma = new PrismaClient()
 
 async function main() {
   await prisma.rating.deleteMany()
-  await prisma.user.deleteMany()
   await prisma.categoriesOnBooks.deleteMany()
   await prisma.category.deleteMany()
   await prisma.book.deleteMany()
+  await prisma.session.deleteMany()
+  await prisma.account.deleteMany()
+  await prisma.user.deleteMany()
 
   const usersSeed = users.map((user) => {
     return prisma.user.create({

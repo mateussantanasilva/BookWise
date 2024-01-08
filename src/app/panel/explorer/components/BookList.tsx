@@ -3,27 +3,33 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import * as BookCard from '@/components/BookCard'
 import { BookDetailsDialog } from './BookDetailsDialog'
-
-import BookExampleImage from 'public/images/books/o-poder-do-habito.png'
+import { useBook } from '@/hooks/useBook'
 
 export function BookList() {
-  return (
-    <div className="mr-24 mt-12 grid grid-cols-3 gap-5">
-      <Dialog.Root>
-        <Dialog.Trigger>
-          <BookCard.Root>
-            <BookCard.Content
-              src={BookExampleImage}
-              alt="Capa do livro A revolução dos bichos"
-              title="O poder do hábito"
-              author="George Orwell"
-              size={108}
-            />
-          </BookCard.Root>
-        </Dialog.Trigger>
+  const { data: bookList } = useBook()
 
-        <BookDetailsDialog />
-      </Dialog.Root>
+  return (
+    <div className="mb-4 mr-24 mt-12 grid grid-cols-3 gap-5">
+      {bookList?.map((book) => {
+        return (
+          <Dialog.Root key={book.id}>
+            <Dialog.Trigger>
+              <BookCard.Root>
+                <BookCard.Content
+                  src={book.cover_url}
+                  alt={`Capa do livro ${book.name}`}
+                  title={book.name}
+                  author={book.author}
+                  width={108}
+                  height={152}
+                />
+              </BookCard.Root>
+            </Dialog.Trigger>
+
+            <BookDetailsDialog book={book} />
+          </Dialog.Root>
+        )
+      })}
     </div>
   )
 }

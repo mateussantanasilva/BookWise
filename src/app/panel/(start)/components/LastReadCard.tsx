@@ -6,7 +6,7 @@ import { RatingStars } from '@/components/RatingStars'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
 import { useSession } from 'next-auth/react'
 
-import BookExampleImage from 'public/images/books/o-hobbit.png'
+import BookExampleImage from 'public/images/books/o-hobbit.jpg'
 
 export function LastReadCard() {
   const session = useSession()

@@ -4,7 +4,7 @@ import { RatingStars } from '@/components/RatingStars'
 import { Avatar } from '@/components/Avatar'
 
 import AvatarExampleImage from 'public/images/avatar-example.png'
-import BookExampleImage from 'public/images/books/o-hobbit.png'
+import BookExampleImage from 'public/images/books/o-hobbit.jpg'
 
 export function PublicReviewPost() {
   return (
