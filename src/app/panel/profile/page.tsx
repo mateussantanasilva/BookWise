@@ -1,11 +1,7 @@
-import * as Input from '@/components/Input'
+import { Input } from '@/components/Input'
 import { PrivateReviewPost } from './components/PrivateReviewPost'
 import { ProfileSidebar } from './components/ProfileSidebar'
-import {
-  CaretLeft,
-  MagnifyingGlass,
-  User,
-} from '@phosphor-icons/react/dist/ssr'
+import { CaretLeft, User } from '@phosphor-icons/react/dist/ssr'
 
 export default function Profile() {
   return (
@@ -25,13 +21,7 @@ export default function Profile() {
       <div className="mb-4 grid grid-cols-profile gap-16">
         <div>
           <form>
-            <Input.Root>
-              <Input.Control placeholder="Buscar livro avaliado" />
-
-              <Input.Suffix>
-                <MagnifyingGlass size="1.25rem" className="h-5 w-5" />
-              </Input.Suffix>
-            </Input.Root>
+            <Input placeholder="Buscar livro avaliado" />
           </form>
 
           <section className="mt-8 space-y-6">

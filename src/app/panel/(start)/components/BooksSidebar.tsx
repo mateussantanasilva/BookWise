@@ -28,6 +28,7 @@ export function BooksSidebar() {
             alt="Capa do livro A revolução dos bichos"
             title="O poder do hábito"
             author="George Orwell"
+            rating={1}
             width={64}
           />
         </BookCard.Root>

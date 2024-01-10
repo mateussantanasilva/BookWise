@@ -13,10 +13,6 @@ export const books = [
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
       },
-      {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
     ],
   },
   {
@@ -51,10 +47,6 @@ export const books = [
         name: 'Ficção',
         id: '8c4a4a4d-cbc4-4d2c-bb46-e95b0a536e09',
       },
-      {
-        name: 'Geek',
-        id: '2e65c193-325a-40c3-98f3-6c13e9b75b02',
-      },
     ],
   },
   {
@@ -69,10 +61,6 @@ export const books = [
       {
         name: 'Alegoria',
         id: 'a1d0ee25-9c9a-49c8-84eb-7af1e0dd356d',
-      },
-      {
-        name: 'Fábula',
-        id: '997f8a10-21fb-4c80-bd16-17e8b79a31a3',
       },
     ],
   },
@@ -105,10 +93,6 @@ export const books = [
     total_pages: 165,
     categories: [
       {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
-      {
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
       },
@@ -123,10 +107,6 @@ export const books = [
     cover_url: '/images/books/codigo-limpo.jpg',
     total_pages: 365,
     categories: [
-      {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
       {
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
@@ -162,10 +142,6 @@ export const books = [
     total_pages: 288,
     categories: [
       {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
-      {
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
       },
@@ -184,10 +160,6 @@ export const books = [
         name: 'Ficção',
         id: '8c4a4a4d-cbc4-4d2c-bb46-e95b0a536e09',
       },
-      {
-        name: 'Suspense',
-        id: '7c8dc74a-2e03-4d72-96de-822e332e5530',
-      },
     ],
   },
   {
@@ -199,10 +171,6 @@ export const books = [
     cover_url: '/images/books/refatoracao.jpg',
     total_pages: 332,
     categories: [
-      {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
       {
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
@@ -219,12 +187,8 @@ export const books = [
     total_pages: 288,
     categories: [
       {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
-      {
-        name: 'Arquitetura',
-        id: 'a2891eaa-6d9e-48d8-a86a-10aa017d3d3f',
+        name: 'Educação',
+        id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',
       },
     ],
   },
@@ -260,10 +224,6 @@ export const books = [
         name: 'Ficção',
         id: '8c4a4a4d-cbc4-4d2c-bb46-e95b0a536e09',
       },
-      {
-        name: 'Terror',
-        id: 'a0a61b53-37d7-48ec-9b92-6db074f6d9c9',
-      },
     ],
   },
   {
@@ -275,10 +235,6 @@ export const books = [
     cover_url: '/images/books/o-programador-pragmatico.jpg',
     total_pages: 205,
     categories: [
-      {
-        name: 'Programação',
-        id: 'c9f22067-4978-4a24-84a1-7d37f343dfc2',
-      },
       {
         name: 'Educação',
         id: 'f1a50507-0aa7-4245-8a5c-0d0de14e9d6d',

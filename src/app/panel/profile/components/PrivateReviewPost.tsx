@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
 
-import BookExampleImage from 'public/images/books/o-hobbit.png'
+import BookExampleImage from 'public/images/books/o-hobbit.jpg'
 
 export function PrivateReviewPost() {
   return (

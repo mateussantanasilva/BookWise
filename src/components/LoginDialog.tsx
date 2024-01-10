@@ -20,9 +20,9 @@ export function LoginDialog() {
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <Dialog.Overlay className="absolute left-0 top-0 z-30 h-screen w-screen bg-overlay" />
+        <Dialog.Overlay className="absolute left-0 top-0 z-30 h-full w-screen bg-overlay" />
 
-        <Dialog.Content className="absolute left-1/2 top-0 z-40 flex h-fit w-login-dialog -translate-x-1/2 translate-y-1/2 flex-col items-center rounded-xl bg-gray-700 p-4 shadow-md">
+        <Dialog.Content className="fixed left-1/2 top-0 z-40 flex h-fit w-login-dialog -translate-x-1/2 translate-y-1/2 flex-col items-center rounded-xl bg-gray-700 p-4 shadow-md">
           <Dialog.Close
             className="mb-4 ml-auto flex text-gray-400 transition-colors hover:text-gray-100"
             aria-label="Fechar modal"

@@ -5,9 +5,10 @@ import { RatingStars } from '../RatingStars'
 type ContentProps = ComponentProps<typeof Image> & {
   title: string
   author: string
+  rating: number
 }
 
-export function Content({ title, author, ...props }: ContentProps) {
+export function Content({ title, author, rating, ...props }: ContentProps) {
   return (
     <>
       <Image {...props} src={props.src} alt={props.alt} />
@@ -20,7 +21,7 @@ export function Content({ title, author, ...props }: ContentProps) {
           </span>
         </div>
 
-        <RatingStars rating={4} />
+        <RatingStars rating={rating} />
       </div>
     </>
   )
