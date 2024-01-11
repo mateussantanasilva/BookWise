@@ -2,9 +2,9 @@
 
 import * as Dialog from '@radix-ui/react-dialog'
 import * as BookCard from '@/components/BookCard'
-import { BookDetailsDialog } from './BookDetailsDialog'
 import { Book } from '@/@types/book'
 import { prepareRatings } from '@/utils/prepare-ratings'
+import { BookDialog } from '@/components/BookDialog'
 
 interface BookListProps {
   bookList: Book[]
@@ -32,7 +32,7 @@ export function BookList({ bookList }: BookListProps) {
               </BookCard.Root>
             </Dialog.Trigger>
 
-            <BookDetailsDialog bookId={book.id} />
+            <BookDialog bookId={book.id} />
           </Dialog.Root>
         )
       })}

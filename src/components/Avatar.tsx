@@ -5,7 +5,7 @@ type AvatarProps = ComponentProps<typeof Image> & {
   size?: 32 | 40 | 72
 }
 
-export function Avatar({ size = 40, ...props }: AvatarProps) {
+export function Avatar({ size = 40, className, ...props }: AvatarProps) {
   return (
     <div className="h-fit w-fit rounded-full bg-gradient-vertical p-[1px]">
       <Image
@@ -14,7 +14,7 @@ export function Avatar({ size = 40, ...props }: AvatarProps) {
         alt={props.alt}
         width={size}
         height={size}
-        className="rounded-full"
+        className={`rounded-full object-cover ${className}`}
       />
     </div>
   )
