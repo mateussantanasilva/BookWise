@@ -1,10 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import * as BookCard from '@/components/BookCard'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
-
-import BookExampleImage from 'public/images/books/o-hobbit.jpg'
+import { usePopular } from '@/hooks/usePopular'
+import { prepareRatings } from '@/utils/prepare-ratings'
 
 export function BooksSidebar() {
+  const { data: popularBooks } = usePopular()
+
   return (
     <aside className="mr-24">
       <header className="mb-4 flex items-center justify-between">
@@ -22,16 +26,23 @@ export function BooksSidebar() {
       </header>
 
       <div className="space-y-3">
-        <BookCard.Root href="/panel/explorer">
-          <BookCard.Content
-            src={BookExampleImage}
-            alt="Capa do livro A revolução dos bichos"
-            title="O poder do hábito"
-            author="George Orwell"
-            rating={1}
-            width={64}
-          />
-        </BookCard.Root>
+        {popularBooks?.map((book) => {
+          const { averageRating } = prepareRatings(book.ratings)
+
+          return (
+            <BookCard.Root key={book.id} href="/panel/explorer">
+              <BookCard.Content
+                src={book.cover_url}
+                alt={`Capa do livro ${book.name}`}
+                title={book.name}
+                author={book.author}
+                rating={averageRating}
+                width={64}
+                height={94}
+              />
+            </BookCard.Root>
+          )
+        })}
       </div>
     </aside>
   )

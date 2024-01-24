@@ -1,7 +1,7 @@
-import { PublicReviewPost } from './components/PublicReviewPost'
 import { LastReadCard } from './components/LastReadCard'
 import { BooksSidebar } from './components/BooksSidebar'
 import { ChartLineUp } from '@phosphor-icons/react/dist/ssr'
+import { ReviewList } from './components/ReviewList'
 
 export default function Panel() {
   return (
@@ -17,21 +17,7 @@ export default function Panel() {
         <div>
           <LastReadCard />
 
-          <section>
-            <header className="mb-4">
-              <h3 className="text-sm font-normal leading-base text-gray-100">
-                Avaliações mais recentes
-              </h3>
-            </header>
-
-            <div className="space-y-3">
-              <PublicReviewPost />
-              <PublicReviewPost />
-              <PublicReviewPost />
-              <PublicReviewPost />
-              <PublicReviewPost />
-            </div>
-          </section>
+          <ReviewList />
         </div>
 
         <BooksSidebar />

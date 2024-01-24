@@ -1,20 +1,21 @@
 import { Rating } from '@/@types/rating'
 import { api } from '@/libs/axios'
 import { useQuery } from '@tanstack/react-query'
+import { useId } from 'react'
 
-async function fetchRatings(bookId: string) {
-  const { data } = await api.get(`/ratings/${bookId}`)
+async function fetchRatings() {
+  const { data } = await api.get(`/ratings`)
 
   return data
 }
 
-export function useRating(bookId: string) {
+export function useRating() {
+  const id = useId()
+
   const query = useQuery<Rating[]>({
-    queryKey: ['rating', bookId],
+    queryKey: ['rating-list', id],
 
-    queryFn: async () => fetchRatings(bookId),
-
-    refetchOnMount: true, // after creating a new rating
+    queryFn: fetchRatings,
   })
 
   return query

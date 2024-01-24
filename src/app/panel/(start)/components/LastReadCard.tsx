@@ -5,13 +5,20 @@ import Image from 'next/image'
 import { RatingStars } from '@/components/RatingStars'
 import { CaretRight } from '@phosphor-icons/react/dist/ssr'
 import { useSession } from 'next-auth/react'
-
-import BookExampleImage from 'public/images/books/o-hobbit.jpg'
+import { useLastRating } from '@/hooks/useLastRating'
+import { formatDate } from '@/utils/format-date'
 
 export function LastReadCard() {
   const session = useSession()
 
-  if (session.status === 'unauthenticated') return
+  const { data: lastRating, isLoading } = useLastRating(
+    session.data?.user.id ?? '',
+  )
+
+  if (session.status === 'unauthenticated' || !lastRating || !lastRating.book)
+    return
+
+  const createdAt = !isLoading && formatDate(lastRating.created_at)
 
   return (
     <section className="mb-10">
@@ -34,31 +41,31 @@ export function LastReadCard() {
         className="flex gap-6 rounded-lg bg-gray-600 px-6 py-5 transition-shadow hover:ring-2 hover:ring-gray-500"
       >
         <Image
-          src={BookExampleImage}
-          alt="Capa do livro O Hobbit"
+          src={lastRating.book.cover_url}
+          alt={`Capa do livro ${lastRating.book.name}`}
           width={108}
+          height={152}
         />
 
         <div>
           <div className="mb-3 flex justify-between">
             <span className="text-sm leading-base text-gray-300">
-              Há 2 dias
+              {createdAt}
             </span>
 
-            <RatingStars rating={4} />
+            <RatingStars rating={lastRating.rate} />
           </div>
 
           <strong className="block leading-short text-gray-100">
-            Entendendo Algoritmos
+            {lastRating.book.name}
           </strong>
 
           <span className="mb-6 block text-sm leading-base text-gray-400">
-            Aditya Bhargava
+            {lastRating.book.author}
           </span>
 
           <p className="text-sm leading-base text-gray-300">
-            Nec tempor nunc in egestas. Euismod nisi eleifend at et in sagittis.
-            Penatibus id vestibulum imperdiet a at imperdiet lectu...
+            {lastRating.description}
           </p>
         </div>
       </Link>
