@@ -2,7 +2,7 @@ import { ElementType } from 'react'
 
 interface StatusItemProps {
   icon: ElementType
-  title: string
+  title: string | number
   content: string
   size?: 'md' | 'lg'
 }

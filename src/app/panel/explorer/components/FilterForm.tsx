@@ -23,7 +23,7 @@ export function FilterForm({ onSetFilter, onSetCategory }: FilterFormProps) {
     resolver: zodResolver(filterFormSchema),
   })
 
-  async function handleFilterBooks({ bookOrAuthor }: FilterFormData) {
+  function handleFilterBooks({ bookOrAuthor }: FilterFormData) {
     onSetFilter(bookOrAuthor)
   }
 

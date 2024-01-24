@@ -8,13 +8,17 @@ import IconGithubImage from 'public/images/icon-github.svg'
 import IconVisitorImage from 'public/images/icon-visitor.svg'
 
 export function Options() {
+  async function handleSignInGoogle() {
+    await signIn('google', { callbackUrl: '/panel' })
+  }
+
   async function handleSignInGithub() {
     await signIn('github', { callbackUrl: '/panel' })
   }
 
   return (
     <div className="flex flex-col gap-4">
-      <SignInCard.Root>
+      <SignInCard.Root onClick={handleSignInGoogle}>
         <SignInCard.Content
           icon={IconGoogleImage}
           text="Logo do google"
