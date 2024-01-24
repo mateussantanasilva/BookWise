@@ -3,9 +3,9 @@
 import { ReviewPost } from '@/components/BookDialog/ReviewPost'
 import { LoginDialog } from '../LoginDialog'
 import { ReviewForm } from './ReviewForm'
-import { useRating } from '@/hooks/useRating'
 import { useSession } from 'next-auth/react'
 import { useState } from 'react'
+import { useRatingById } from '@/hooks/useRatingById'
 
 interface RatingListProps {
   bookId: string
@@ -16,7 +16,7 @@ export function RatingList({ bookId }: RatingListProps) {
 
   const session = useSession()
 
-  const { data: ratings } = useRating(bookId)
+  const { data: ratings } = useRatingById({ bookId })
 
   const userAlreadyRated = ratings?.some(
     (rating) => rating.user.id === session.data?.user.id,

@@ -1,3 +1,4 @@
+import { Book } from './book'
 import { User } from './user'
 
 export interface Rating {
@@ -6,4 +7,5 @@ export interface Rating {
   description: string
   created_at: string
   user: User
+  book: Book
 }

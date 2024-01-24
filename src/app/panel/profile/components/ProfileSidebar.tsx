@@ -9,9 +9,12 @@ import {
   UserList,
 } from '@phosphor-icons/react/dist/ssr'
 import { useSession } from 'next-auth/react'
+import { useStatus } from '@/hooks/useStatus'
 
 export function ProfileSidebar() {
   const { data } = useSession()
+
+  const { data: userStatus } = useStatus(data?.user.id ?? '')
 
   return (
     <aside className="mr-24 flex h-fit flex-col items-center border-l border-gray-700">
@@ -26,22 +29,34 @@ export function ProfileSidebar() {
           {data?.user.name}
         </strong>
         <span className="text-sm leading-base text-gray-400">
-          membro desde 2019
+          {userStatus?.accountDate}
         </span>
       </header>
 
       <div className="my-8 block h-1 w-8 rounded-full bg-gradient-horizontal"></div>
 
       <ul className="my-5 space-y-10">
-        <StatusItem icon={BookOpen} title={'3853'} content="Páginas lidas" />
+        <StatusItem
+          icon={BookOpen}
+          title={userStatus?.pagesRead ?? 0}
+          content="Páginas lidas"
+        />
 
-        <StatusItem icon={Books} title={'10'} content="Livros avaliados" />
+        <StatusItem
+          icon={Books}
+          title={userStatus?.ratedBooks ?? 0}
+          content="Livros avaliados"
+        />
 
-        <StatusItem icon={UserList} title={'8'} content="Autores lidos" />
+        <StatusItem
+          icon={UserList}
+          title={userStatus?.numAuthors ?? 0}
+          content="Autores lidos"
+        />
 
         <StatusItem
           icon={BookmarkSimple}
-          title={'Computação'}
+          title={userStatus?.mostReadCategory ?? 'Nenhuma'}
           content="Categoria mais lida"
         />
       </ul>

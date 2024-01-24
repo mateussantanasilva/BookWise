@@ -1,7 +1,5 @@
-import { Input } from '@/components/Input'
-import { PrivateReviewPost } from './components/PrivateReviewPost'
-import { ProfileSidebar } from './components/ProfileSidebar'
 import { CaretLeft, User } from '@phosphor-icons/react/dist/ssr'
+import { FilterForm } from './components/FilterForm'
 
 export default function Profile() {
   return (
@@ -18,20 +16,7 @@ export default function Profile() {
         </button> */}
       </header>
 
-      <div className="mb-4 grid grid-cols-profile gap-16">
-        <div>
-          <form>
-            <Input placeholder="Buscar livro avaliado" />
-          </form>
-
-          <section className="mt-8 space-y-6">
-            <PrivateReviewPost />
-            <PrivateReviewPost />
-          </section>
-        </div>
-
-        <ProfileSidebar />
-      </div>
+      <FilterForm />
     </>
   )
 }

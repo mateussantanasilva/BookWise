@@ -30,21 +30,34 @@ export function RatingStars({
   return (
     <div className="flex gap-1">
       {Array.from({ length: 5 }).map((_, index) => {
-        starStyle = index + 1 <= fillStar ? 'fill' : 'regular'
+        if (!rating) {
+          starStyle = index + 1 <= fillStar ? 'fill' : 'regular'
 
-        if (rating) starStyle = index + 1 <= rating ? 'fill' : 'regular'
+          return (
+            <button
+              key={`star-${index}`}
+              type="button"
+              value={index + 1}
+              onClick={handleFillStar}
+            >
+              <Star
+                size={size}
+                weight={starStyle}
+                className="text-purple-100"
+              />
+            </button>
+          )
+        }
+
+        starStyle = index + 1 <= rating ? 'fill' : 'regular'
 
         return (
-          <button
+          <Star
             key={`star-${index}`}
-            type="button"
-            disabled={!!rating}
-            value={index + 1}
-            onClick={handleFillStar}
-            className="disabled:cursor-default"
-          >
-            <Star size={size} weight={starStyle} className="text-purple-100" />
-          </button>
+            size={size}
+            weight={starStyle}
+            className="text-purple-100"
+          />
         )
       })}
     </div>
