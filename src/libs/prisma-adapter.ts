@@ -13,9 +13,7 @@ export function PrismaAdapter(): Adapter {
       })
 
       return {
-        id: prismaUser.id,
-        name: prismaUser.name,
-        email: prismaUser.email as string,
+        ...prismaUser,
         emailVerified: null,
         avatar_url: prismaUser.avatar_url as string,
       }
@@ -31,9 +29,7 @@ export function PrismaAdapter(): Adapter {
       if (!user) return null
 
       return {
-        id: user.id,
-        name: user.name,
-        email: user.email,
+        ...user,
         emailVerified: null,
         avatar_url: user.avatar_url as string,
       }
@@ -49,9 +45,7 @@ export function PrismaAdapter(): Adapter {
       if (!user) return null
 
       return {
-        id: user.id,
-        name: user.name,
-        email: user.email,
+        ...user,
         emailVerified: null,
         avatar_url: user.avatar_url as string,
       }
@@ -75,9 +69,7 @@ export function PrismaAdapter(): Adapter {
       const { user } = account
 
       return {
-        id: user.id,
-        name: user.name,
-        email: user.email,
+        ...user,
         emailVerified: null,
         avatar_url: user.avatar_url as string,
       }
@@ -96,9 +88,7 @@ export function PrismaAdapter(): Adapter {
       })
 
       return {
-        id: prismaUser.id,
-        name: prismaUser.name,
-        email: prismaUser.email,
+        ...prismaUser,
         emailVerified: null,
         avatar_url: prismaUser.avatar_url as string,
       }
