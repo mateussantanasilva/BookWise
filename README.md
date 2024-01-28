@@ -12,6 +12,11 @@ Plataforma de recomendações para leitores, um lugar onde eles possam avaliar e
 </div>
 -->
 
+
+## 🚧 Status
+
+Em construção...
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
